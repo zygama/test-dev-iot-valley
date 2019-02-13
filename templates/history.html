@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Historique</title>
+</head>
+<body>
+    <div id="container">
+        <div id="link-container">
+            <a href="/deletehistory">Supprimer l'historique</a>
+            <a href="/counter">Retour au compteur</a>
+        </div>
+        <div id="json-history-file-content">
+            <table border="1">
+                <tr>
+                    <th>Valeur du compteur</th>
+                    <th>Action effectuée</th>
+                </tr>
+                {% for val in value %}
+                <tr>
+                    <td>{{ val['counterValue'] }}</td>
+                    <td>{{ val['actionOnCounter'] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

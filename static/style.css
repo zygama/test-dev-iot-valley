@@ -1,0 +1,161 @@
+:root {
+    --gradient-color1: #465BC7;
+    --gradient-color2: #243171;
+    --gray: #777;
+    --scale-value: 0.8;
+    --box-width: 670px;
+    --box-height: 760px;
+    --main-color: #6100ED;
+    --container-link-height: 48px;
+    --link-history-font-size: 14px;
+    --link-history-margin-right: 24px;
+    --counter-height: 181px;
+    --counter-width: 172px;
+    --counter-font-size: 150px;
+    --counter-line-height: 181px;
+    --select-box-width: 328px;
+    --option-action-height: 48px;
+    --input-value-width: 328px;
+    --input-value-height: 56px;
+    --button-submit-height: 45.03px;
+    --button-submit-width: 116.33px;
+    --generic-letter-spacing: 0.9px; /* translation made from adobeXD value (not sure if it's right)  */
+    --generic-box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2);
+    --container-link-to-history-box-shadow: 0 6px 10px 0 rgba(0,0,0,0.16);
+    --box-box-shadow: 3px 3px 2px 0 rgba(0,0,0,0.16);
+}
+html, body {
+    margin: 0; /* Don't show scrollbars anymore */
+    padding: 0;
+    height: 100%;
+    width: 100%; 
+}
+body {
+    background-image: linear-gradient(180deg, var(--gradient-color1), var(--gradient-color2));
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
+}
+.center-horizontally {
+    display: flex;
+    justify-content: center;
+}
+/* CSS for the /counter endpoint */
+#container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#box {
+    background-color: white;
+    width: calc(var(--box-width) * var(--scale-value));
+    height: calc(var(--box-height) * var(--scale-value));
+    border-radius: 5px;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--box-box-shadow);
+}
+#container-link-to-history {
+    height: calc(var(--container-link-height) * var(--scale-value));
+    background-color: var(--main-color);
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    box-shadow: var(--container-link-to-history-box-shadow);
+}
+#container-link-to-history a {
+    color: white;
+    text-decoration: none;
+    font-size: calc(var(--link-history-font-size) * var(--scale-value));
+    margin-right: var(--link-history-margin-right);
+    letter-spacing: var(--generic-letter-spacing);
+}
+#container-form-and-counter {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#container-counter {
+    height: calc(var(--counter-height) * var(--scale-value));
+    display: flex;
+    align-items: center;
+}
+#counter {
+    color: var(--main-color);
+    font-size: calc(var(--counter-font-size) * var(--scale-value));
+    font-weight: bold;
+    /* line-height: calc(var(--counter-line-height) * var(--scale-value)); */
+}
+#action-select-box {
+    width: calc(var(--select-box-width) * var(--scale-value));
+    font-family: inherit; /* To force the Roboto font inside the select */
+    border-radius: 4px;
+    box-shadow: var(--generic-box-shadow);
+    overflow-y: auto; /* To hide the scrollbar of the select */
+}
+#action-select-box option {
+    height: calc(var(--option-action-height) * var(--scale-value));
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+form {
+    margin-top: 20px;
+}
+form input {
+    height: calc(var(--input-value-height) * var(--scale-value));
+    width: calc(var(--input-value-width) * var(--scale-value));
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+    text-indent: 10px;
+}
+button {
+    height: calc(var(--button-submit-height) * var(--scale-value));
+    width: calc(var(--button-submit-width) * var(--scale-value));
+    border: 0;
+    border-radius: 4px;
+    background-color: var(--main-color);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    color: white;
+    letter-spacing: var(--generic-letter-spacing);
+    box-shadow: var(--generic-box-shadow);
+}
+
+/* CSS for the /history endpoint */
+#container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#link-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#link-container a {
+    color: white;
+    text-decoration: none;
+    font-size: calc(var(--link-history-font-size) * var(--scale-value));
+    margin-right: calc(var(--link-history-margin-right) * var(--scale-value));
+}
+#json-history-file-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+table, th, td {
+    border: 1px solid black;
+}
+
+

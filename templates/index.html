@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Test Stage IOT Valley</title>
+</head>
+<body>
+    <div id="container">
+        <div id="box">
+            <div id="container-link-to-history">
+                <a href="/history">ACCEDER A L'HISTORIQUE</a>
+            </div>
+            <div id="container-form-and-counter">
+                <div id="container-counter" class="center-horizontally">
+                    <div id="counter">{{value}}</div>
+                </div>
+                <div id="container-action-list" class="center-horizontally">
+                    <select id="action-select-box" name="action-select-box" size="4" form="form-counter">
+                        <option value="addition">Addition</option>
+                        <option value="soustraction">Soustraction</option>
+                        <option value="multiplication">Multiplication</option>
+                        <option value="division">Division</option>
+                    </select>
+                </div>
+                <div id="container-value-input">
+                    <form action="/counter" method="get" id="form-counter" class="center-horizontally">
+                        <input type="text" name="value" placeholder="Valeur" id="input-value">
+                    </form>
+                </div>
+                <div id="container-validation-button" class="center-horizontally">
+                    <button type="submit" form="form-counter">VALIDER</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
